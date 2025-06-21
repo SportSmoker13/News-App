@@ -1,0 +1,16 @@
+.pattern-dots {
+    background-image: radial-gradient(currentColor 1px, transparent 1px);
+    background-size: 12px 12px;
+}
+
+.pattern-slate-200 {
+    color: #e2e8f0; /* This is the color for dots */
+}
+
+.pattern-opacity-100 {
+    opacity: 1;
+}
+
+.pattern-size-4 {
+    background-size: 8px 8px; /* Adjust dot size */
+}
