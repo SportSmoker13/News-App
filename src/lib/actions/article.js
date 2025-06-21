@@ -156,7 +156,7 @@ export async function importFile(formData) {
         source_link: mappedData.source_link || "",
         date: parsedDate,
         news_content: mappedData.news_content || "",
-        authorId: "4e6a1322-3016-4722-b46e-d0e209a88ea5"
+        authorId: "27399042-edab-423a-b242-e58ec20ff29e"
       };
     });
     
