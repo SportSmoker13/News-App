@@ -11,8 +11,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { ExclamationTriangleIcon } from "@radix-ui/react-icons";
 import LoginForm from "@/components/LoginForm";
+import { Suspense } from "react";
 
-export default function LoginPage() {
+function Login() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const error = searchParams.get("error");
@@ -85,4 +86,12 @@ export default function LoginPage() {
       </div>
     </div>
   );
+}
+
+export default function LoginPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <Login />
+    </Suspense>
+  )
 }

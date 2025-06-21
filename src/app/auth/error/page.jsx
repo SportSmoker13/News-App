@@ -1,14 +1,14 @@
 // app/auth/error/page.jsx
 "use client";
 
-import { useEffect } from "react";
+import { Suspense, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { ExclamationTriangleIcon } from "@radix-ui/react-icons";
+import { Button } from "@/components/ui/button";
 
-export default function AuthErrorPage() {
+function AuthError() {
   const searchParams = useSearchParams();
   const error = searchParams.get("error");
 
@@ -54,4 +54,12 @@ export default function AuthErrorPage() {
       </div>
     </div>
   );
+}
+
+export default function AuthErrorPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <AuthError />
+    </Suspense>
+  )
 }
